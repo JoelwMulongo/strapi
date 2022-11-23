@@ -4,14 +4,14 @@ import { ThemeProvider, lightTheme } from '@strapi/design-system';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { FolderList } from '../FolderList';
+import { FolderGrid } from '../FolderGrid';
 
 const ComponentFixture = () => {
   return (
     <MemoryRouter>
       <IntlProvider locale="en" messages={{}}>
         <ThemeProvider theme={lightTheme}>
-          <FolderList title="Folder list title">Folder list children</FolderList>
+          <FolderGrid title="Folder grid title">Folder grid children</FolderGrid>
         </ThemeProvider>
       </IntlProvider>
     </MemoryRouter>
@@ -20,7 +20,7 @@ const ComponentFixture = () => {
 
 const setup = (props) => render(<ComponentFixture {...props} />);
 
-describe('FolderList', () => {
+describe('FolderGrid', () => {
   it('renders and match snapshots', () => {
     const { container } = setup();
     expect(container).toMatchSnapshot();
